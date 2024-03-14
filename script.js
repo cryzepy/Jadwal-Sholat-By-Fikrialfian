@@ -73,7 +73,7 @@ const Local_storage = {
     getLocId: () => {
         const data = JSON.parse(localStorage.getItem('locId'))
         if (!data) {
-            fetch('https://api.myquran.com/v1/sholat/kota/semua')
+            fetch('https://api.myquran.com/v2/sholat/kota/semua')
             .then(x => x.json()).then(y => {
                 localStorage.setItem('locId', JSON.stringify(y))
                 window.location.reload()
@@ -88,7 +88,7 @@ const Local_storage = {
 }
 
 function fetchAPI() {
-    fetch(`https://api.myquran.com/v1/sholat/jadwal/${Local_storage.getId()}/${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`)
+    fetch(`https://api.myquran.com/v2/sholat/jadwal/${Local_storage.getId()}/${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`)
     .then(x => x.json())
     .then(i => {
         const root = i.data.jadwal
