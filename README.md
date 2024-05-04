@@ -1,1 +1,2 @@
-This application is an application for viewing prayer schedules in Indonesian areas which was created using HTML, CSS, JavaScript and using api api.myquran.com
+#  Tentang Website
+aplikasi untuk melihat jadwal sholat sesuai dengan daerah yang ada di indonesia dengan menggunakan API dari <a href="api.myquran.com">`api.myquran.com`</a>
