@@ -74,9 +74,12 @@ const Local_storage = {
         const data = JSON.parse(localStorage.getItem('locId'))
         if (!data) {
             fetch('https://api.myquran.com/v2/sholat/kota/semua')
-            .then(x => x.json()).then(y => {
-                localStorage.setItem('locId', JSON.stringify(y))
-                window.location.reload()
+            .then(x => x.json()).then(result => {
+
+                if(result.data) {
+                    localStorage.setItem('locId', JSON.stringify(result.data))
+                    window.location.reload()
+                }
             })
         }
         return data
